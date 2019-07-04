@@ -1,0 +1,55 @@
+{% extends "base.html"%}
+{% block content %}
+    <div class="col s6 offset-s4 center">
+
+        <div class="col s6">
+            <form action="/" method="POST" style="margin-top: 70px">
+                {{ form.csrf_token }}
+
+                    <form class="center-align">
+                    <div class="row">
+                        <div class="input-field col s4">
+                            {{form.name}} {{form.name.label}}
+                        </div>
+                        <div class="input-field col s4">
+                        {{form.email}}{{form.email.label}}
+                        </div>
+                        <div class="input-field col s4">
+                        {{form.tel}}{{form.tel.label}}
+                        </div>
+                    </div>
+                    <div class="input-field col s12">
+                        {{form.about.label}}
+                        {{form.about}}
+                    </div>
+                    <div class="input-field col s12">
+                        {{form.goals.label}}
+                        {{form.goals}}
+                    </div>
+                    <div class="input-field col s12">
+                        {{form.accomplishments.label}}
+                        {{form.accomplishments}}
+                    </div>
+                    <div class="input-field col s12">
+                        {{form.interests.label}}
+                        {{form.interests}}
+                    </div>
+                    <div class="input-field col s12">
+                        {{form.networks.label}}
+                        {{form.networks}}
+                    </div>
+                    <div class="input-field col s12">
+                        {{form.skills.label}}
+                        {{form.skills}}
+                    </div>
+                    <div class="input-field col s12">
+                        {{form.referrals.label}}
+                        {{form.referrals}}
+                    </div>
+                    <input type="submit" value="Create!" onclick="M.toast({html: 'Your PDF is Generating and ' +
+                     'will be ready for download momentarily.', classes: 'white-text rounded'})">
+
+            </form>
+        </div>
+    </div>
+{% endblock %}
