@@ -8,8 +8,10 @@ Jinja2==2.10.1
 MarkupSafe==1.1.1
 pdfkit==0.6.1
 Pillow==6.0.0
+python-pdf==0.37
 pytz==2019.1
 reportlab==3.5.23
 sqlparse==0.3.0
 Werkzeug==0.15.4
 WTForms==2.2.1
+wkhtmltopdf-pack-ng==0.12.3.0
