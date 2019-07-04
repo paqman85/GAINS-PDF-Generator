@@ -3,7 +3,7 @@ from flask_heroku import Heroku
 from flask_wtf import FlaskForm
 from wtforms import StringField
 from wtforms.validators import DataRequired
-
+import os
 import pdfkit
 
 app = Flask(__name__)
@@ -19,7 +19,7 @@ else:
     print ('loading wkhtmltopdf path on localhost')
     MYDIR = os.path.dirname(__file__)
     WKHTMLTOPDF_CMD = os.path.join(MYDIR + "/static/executables/bin/", "wkhtmltopdf.exe")
-    
+
 
 class GainsForm(FlaskForm):
     name = StringField('Your Name', validators=[DataRequired()])
