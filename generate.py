@@ -1,4 +1,5 @@
-from flask import Flask, render_template, make_response, redirect
+from flask import Flask, render_template, make_response
+from flask_heroku import Heroku
 from flask_wtf import FlaskForm
 from wtforms import StringField
 from wtforms.validators import DataRequired
@@ -7,6 +8,7 @@ import pdfkit
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "BNI_For_life_fo_Shizzle"
+heroku = Heroku(app)
 
 
 class GainsForm(FlaskForm):
@@ -51,4 +53,5 @@ def index():
     return render_template('index.html', form=form)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    #app.debug = True)
+    app.run()
