@@ -11,8 +11,36 @@ app.config["SECRET_KEY"] = "BNI_For_life_fo_Shizzle"
 heroku = Heroku(app)
 
 
-WKHTMLTOPDF_CMD = subprocess.Popen(['which', os.environ.get('WKHTMLTOPDF_BINARY', 'wkhtmltopdf')],
-                                   stdout=subprocess.PIPE).communicate()[0].strip()
+print('loading wkhtmltopdf path on localhost')
+MYDIR = os.path.dirname(__file__)
+WKHTMLTOPDF_CMD = os.path.join(MYDIR + "/bin/", "wkhtmltopdf.exe")
+
+
+# # WKHTMLTOPDF config
+# if 'DYNO' in os.environ:
+#     print ('loading wkhtmltopdf path on heroku')
+#     MYDIR = os.path.dirname(__file__)
+#     WKHTMLTOPDF_CMD = os.path.join(MYDIR + "/vendor/wkhtmltox/lib/", "libwkhtmltox.so")
+# else:
+#     print ('loading wkhtmltopdf path on localhost')
+#     MYDIR = os.path.dirname(__file__)
+#     WKHTMLTOPDF_CMD = os.path.join(MYDIR + "/static/executables/bin/", "wkhtmltopdf.exe")
+
+
+# def _get_pdfkit_config():
+#     """wkhtmltopdf lives and functions differently depending on Windows or Linux. We
+#      need to support both since we develop on windows but deploy on Heroku.
+#
+#     Returns:
+#         A pdfkit configuration
+#     """
+#     if platform.system() == 'Windows':
+#         return pdfkit.configuration(
+#             wkhtmltopdf=os.environ.get('WKHTMLTOPDF_BINARY', 'C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe'))
+#     else:
+#         WKHTMLTOPDF_CMD = subprocess.Popen(['which', os.environ.get('WKHTMLTOPDF_BINARY', 'wkhtmltopdf')],
+#                                            stdout=subprocess.PIPE).communicate()[0].strip()
+#         return pdfkit.configuration(wkhtmltopdf=WKHTMLTOPDF_CMD)
 
 
 class GainsForm(FlaskForm):
