@@ -5,7 +5,7 @@ from wtforms import StringField
 from wtforms.validators import DataRequired
 import os
 import pdfkit
-import subprocess
+
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "BNI_For_life_fo_Shizzle"
@@ -27,7 +27,7 @@ heroku = Heroku(app)
 # if 'DYNO' in os.environ:
 #     print ('loading wkhtmltopdf path on heroku')
 MYDIR = os.path.dirname(__file__)
-WKHTMLTOPDF_CMD = os.path.join(MYDIR + "/bin/", "wkhtmltopdf")
+WKHTMLTOPDF_CMD = os.path.join(MYDIR + "/vendor/wkhtmltox/lib/", "libwkhtmltox.so")
 # else:
 #     print ('loading wkhtmltopdf path on localhost')
 #     MYDIR = os.path.dirname(__file__)
