@@ -10,15 +10,9 @@ app = Flask(__name__)
 app.config["SECRET_KEY"] = "BNI_For_life_fo_Shizzle"
 heroku = Heroku(app)
 
-# WKHTMLTOPDF config
-if 'DYNO' in os.environ:
-    print ('loading wkhtmltopdf path on heroku')
-    MYDIR = os.path.dirname(__file__)
-    WKHTMLTOPDF_CMD = os.path.join(MYDIR + "/vendor/wkhtmltox/lib/", "libwkhtmltox.so")
-else:
-    print ('loading wkhtmltopdf path on localhost')
-    MYDIR = os.path.dirname(__file__)
-    WKHTMLTOPDF_CMD = os.path.join(MYDIR + "/static/executables/bin/", "wkhtmltopdf.exe")
+
+WKHTMLTOPDF_CMD = subprocess.Popen(['which', os.environ.get('WKHTMLTOPDF_BINARY', 'wkhtmltopdf')],
+                                   stdout=subprocess.PIPE).communicate()[0].strip()
 
 
 class GainsForm(FlaskForm):
