@@ -14,7 +14,7 @@ heroku = Heroku(app)
 
 
 #WKHTMLTOPDF_CMD = subprocess.Popen(['which', os.environ.get('WKHTMLTOPDF_BINARY', 'wkhtmltopdf-pack')],
-                                   stdout=subprocess.PIPE).communicate()[0].strip()
+                                   # stdout=subprocess.PIPE).communicate()[0].strip()
 
 
 # print('loading wkhtmltopdf path on localhost')
