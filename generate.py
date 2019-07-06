@@ -9,7 +9,7 @@ import pdfkit
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "BNI_For_life_fo_Shizzle"
 heroku = Heroku(app)
-heroku config:set WKHTMLTOPDF_BINARY=wkhtmltopdf-pack
+
 
 
 if 'DYNO' in os.environ:
@@ -20,8 +20,8 @@ if 'DYNO' in os.environ:
 else:
     print ('loading wkhtmltopdf path on localhost')
     MYDIR = os.path.dirname(__file__)
-    WKHTMLTOPDF_CMD = os.path.join(MYDIR + "/static/executables/bin/", "wkhtmltopdf.exe")
-    
+    WKHTMLTOPDF_CMD = os.path.join(MYDIR + "/bin/", "wkhtmltopdf.exe")
+
 # print('loading wkhtmltopdf path on localhost')
 # MYDIR = os.path.dirname(__file__)
 # WKHTMLTOPDF_CMD = os.path.join(MYDIR + "/vendor/wkhtmltox/lib/", "libwkhtmltox.so")
