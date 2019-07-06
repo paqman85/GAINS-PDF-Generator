@@ -81,7 +81,7 @@ def index():
             )
 
         css = ['materialize.css']
-        pdf = pdfkit.from_string(rendered, False, configuration=(wkhtmltopdf=WKHTMLTOPDF_CMD), css=css)
+        pdf = pdfkit.from_string(rendered, False, configuration=WKHTMLTOPDF_CMD, css=css)
 
         response = make_response(pdf)
         response.headers['Content-Type'] = 'application/pdf'
