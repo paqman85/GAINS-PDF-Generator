@@ -15,7 +15,7 @@ heroku = Heroku(app)
 print('loading wkhtmltopdf path on heroku')
 WKHTMLTOPDF_CMD = subprocess.Popen(['which', os.environ.get('WKHTMLTOPDF_BINARY', 'wkhtmltopdf-pack')],
                                    stdout=subprocess.PIPE).communicate()[0].strip()
-pdfkit.configuration(wkhtmltopdf=WKHTMLTOPDF_CMD)
+
 
 # print('loading wkhtmltopdf path on localhost')
 # MYDIR = os.path.dirname(__file__)
@@ -81,7 +81,7 @@ def index():
             )
 
         css = ['materialize.css']
-        pdf = pdfkit.from_string(rendered, False,css=css)
+        pdf = pdfkit.from_string(rendered, False, configuration=(wkhtmltopdf=WKHTMLTOPDF_CMD), css=css)
 
         response = make_response(pdf)
         response.headers['Content-Type'] = 'application/pdf'
