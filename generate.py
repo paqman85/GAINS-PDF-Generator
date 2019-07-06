@@ -12,8 +12,8 @@ app.config["SECRET_KEY"] = "BNI_For_life_fo_Shizzle"
 heroku = Heroku(app)
 
 
-print('loading wkhtmltopdf path on heroku')
-WKHTMLTOPDF_CMD = subprocess.Popen(['which', os.environ.get('WKHTMLTOPDF_BINARY', 'wkhtmltopdf-pack')],
+
+#WKHTMLTOPDF_CMD = subprocess.Popen(['which', os.environ.get('WKHTMLTOPDF_BINARY', 'wkhtmltopdf-pack')],
                                    stdout=subprocess.PIPE).communicate()[0].strip()
 
 
@@ -27,7 +27,7 @@ WKHTMLTOPDF_CMD = subprocess.Popen(['which', os.environ.get('WKHTMLTOPDF_BINARY'
 # if 'DYNO' in os.environ:
 #     print ('loading wkhtmltopdf path on heroku')
 #     MYDIR = os.path.dirname(__file__)
-#     WKHTMLTOPDF_CMD = os.path.join(MYDIR + "/vendor/wkhtmltox/lib/", "libwkhtmltox.so")
+WKHTMLTOPDF_CMD = os.path.join(MYDIR + "/vendor/wkhtmltox/lib/", "libwkhtmltox.so")
 # else:
 #     print ('loading wkhtmltopdf path on localhost')
 #     MYDIR = os.path.dirname(__file__)
