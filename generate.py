@@ -14,7 +14,7 @@ heroku = Heroku(app)
 
 
 #WKHTMLTOPDF_CMD = subprocess.Popen(['which', os.environ.get('WKHTMLTOPDF_BINARY', 'wkhtmltopdf-pack')],
-                                   stdout=subprocess.PIPE).communicate()[0].strip()
+                                   # stdout=subprocess.PIPE).communicate()[0].strip()
 
 
 # print('loading wkhtmltopdf path on localhost')
@@ -26,7 +26,7 @@ heroku = Heroku(app)
 # # WKHTMLTOPDF config
 # if 'DYNO' in os.environ:
 #     print ('loading wkhtmltopdf path on heroku')
-#     MYDIR = os.path.dirname(__file__)
+MYDIR = os.path.dirname(__file__)
 WKHTMLTOPDF_CMD = os.path.join(MYDIR + "/bin/", "wkhtmltopdf")
 # else:
 #     print ('loading wkhtmltopdf path on localhost')
