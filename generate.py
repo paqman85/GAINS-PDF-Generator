@@ -16,6 +16,7 @@ MYDIR = os.path.dirname(__file__)
 WKHTMLTOPDF_CMD = os.path.join(MYDIR + "/bin/", "wkhtmltopdf")
 pdfkit.configuration(wkhtmltopdf=WKHTMLTOPDF_CMD)
 
+
 # # WKHTMLTOPDF config
 # if 'DYNO' in os.environ:
 #     print ('loading wkhtmltopdf path on heroku')
