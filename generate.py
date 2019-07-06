@@ -26,9 +26,9 @@ heroku = Heroku(app)
 # # WKHTMLTOPDF config
 # if 'DYNO' in os.environ:
 #     print ('loading wkhtmltopdf path on heroku')
-# MYDIR = os.path.dirname(__file__)
+MYDIR = os.path.dirname(__file__)
 # WKHTMLTOPDF_CMD = os.path.join(MYDIR + "/vendor/wkhtmltox/lib/", "libwkhtmltox.so")
-config = pdfkit.configuration(wkhtmltopdf='/bin/wkhtmltopdf')
+config = pdfkit.configuration(wkhtmltopdf=os.path.join(MYDIR + '/bin/wkhtmltopdf',"wkhtmltopdf"))
 # else:
 #     print ('loading wkhtmltopdf path on localhost')
 #     MYDIR = os.path.dirname(__file__)
