@@ -13,7 +13,7 @@ heroku = Heroku(app)
 
 print('loading wkhtmltopdf path on localhost')
 MYDIR = os.path.dirname(__file__)
-WKHTMLTOPDF_CMD = os.path.join(MYDIR + "/bin/", "wkhtmltopdf.exe")
+WKHTMLTOPDF_CMD = os.path.join(MYDIR + "/bin/", "wkhtmltopdf")
 pdfkit.configuration(wkhtmltopdf=WKHTMLTOPDF_CMD)
 
 # # WKHTMLTOPDF config
