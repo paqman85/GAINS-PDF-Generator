@@ -12,11 +12,9 @@ app.config["SECRET_KEY"] = "BNI_For_life_fo_Shizzle"
 heroku = Heroku(app)
 
 
-
-
-print ('loading wkhtmltopdf path on heroku')
+print('loading wkhtmltopdf path on heroku')
 WKHTMLTOPDF_CMD = subprocess.Popen(['which', os.environ.get('WKHTMLTOPDF_BINARY', 'wkhtmltopdf-pack')],
-stdout=subprocess.PIPE).communicate()[0].strip()
+                                   stdout=subprocess.PIPE).communicate()[0].strip()
 pdfkit.configuration(wkhtmltopdf=WKHTMLTOPDF_CMD)
 
 # print('loading wkhtmltopdf path on localhost')
