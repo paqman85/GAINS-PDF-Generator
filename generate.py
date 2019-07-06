@@ -27,7 +27,7 @@ heroku = Heroku(app)
 # if 'DYNO' in os.environ:
 #     print ('loading wkhtmltopdf path on heroku')
 #     MYDIR = os.path.dirname(__file__)
-WKHTMLTOPDF_CMD = os.path.join(MYDIR + "/vendor/wkhtmltox/lib/", "libwkhtmltox.so")
+WKHTMLTOPDF_CMD = os.path.join(MYDIR + "/bin/", "wkhtmltopdf")
 # else:
 #     print ('loading wkhtmltopdf path on localhost')
 #     MYDIR = os.path.dirname(__file__)
