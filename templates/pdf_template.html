@@ -1,80 +1,74 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
-  <section class="content">
     <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link type="text/css" rel="stylesheet" href="/static/css/materialize.css" media="screen,projection">
+      <title>{{pdf_name}} - GAINS Profile</title>
+    </head>
 
+    <body>
+        <div class="row flow-text">
 
-  <title>{{pdf_name}} - GAINS Profile</title>
-</head>
+          <div class="col s3 white-text background-color:#641934">
+            <!-- Grey navigation panel -->
+            <div class="container">
+            <h3 class="center-align"> {{ pdf_name }}</h3> <br>
 
-<body>
-    <div class="row" style="background-color:#641934">
-
-      <div class="col s3 white-text flow-text">
-        <!-- Grey navigation panel -->
-        <div class="container">
-        <h3 class="center-align"> {{ pdf_name }}</h3> <br>
-
-        <p class="subheader center-align">{{pdf_tel}} <br> {{ pdf_email }}</p><br>
-        <p class="center-align">{{ pdf_about }}</p>
-        </div>
-      </div>
-
-      <div class="col s9 white">
-        <!-- Teal page content  -->
-                <h1 class="section">GAINS Profile</h1>
-
-        <div class="divider">
-          <div class="">
-            <h3 class="">Goals</h3>
-            <p>{{pdf_goals}}</p>
+            <p class="subheader center-align">{{pdf_tel}} <br> {{ pdf_email }}</p><br>
+            <p class="center-align">{{ pdf_about }}</p>
+            </div>
           </div>
-        </div>
 
-        <div class="">
-          <div class="">
-            <h3 class="">Accomplishments</h3>
-            <p>{{pdf_accomplishments}}</p>
-          </div>
-        </div>
+          <div class="col s9 white">
+            <!-- Teal page content  -->
+            <h2 class="section">GAINS Profile</h2>
 
-        <div class="">
-          <div class="">
-            <h3 class="mb-0">Interests</h3>
-            <p>{{pdf_interests}}</p>
-          </div>
-        </div>
+            <div class="divider">
+              <div class="">
+                <h3 class="">Goals</h3>
+                <p>{{pdf_goals}}</p>
+              </div>
+            </div>
 
-        <div class="">
-          <div class="">
-            <h3 class="">Networks</h3>
-            <p>{{pdf_networks}}</p>
-          </div>
-        </div>
+            <div class="">
+              <div class="">
+                <h3 class="">Accomplishments</h3>
+                <p>{{pdf_accomplishments}}</p>
+              </div>
+            </div>
 
-        <div class="">
-          <div>
-            <h3 class="">Skills</h3>
-            <p>{{pdf_skills}}</p>
-          </div>
-        </div>
-                <div class="">
-          <div>
-            <h3 class="">Great Referrals Would Be...</h3>
-            <p>{{pdf_referrals}}</p>
-          </div>
-        </div>
-      </div>
+            <div class="">
+              <div class="">
+                <h3 class="mb-0">Interests</h3>
+                <p>{{pdf_interests}}</p>
+              </div>
+            </div>
 
-    </div>
+            <div class="">
+              <div class="">
+                <h3 class="">Networks</h3>
+                <p>{{pdf_networks}}</p>
+              </div>
+            </div>
+
+            <div class="">
+              <div>
+                <h3 class="">Skills</h3>
+                <p>{{pdf_skills}}</p>
+              </div>
+            </div>
+                    <div class="">
+              <div>
+                <h3 class="">Great Referrals Would Be...</h3>
+                <p>{{pdf_referrals}}</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
 
      <!--JavaScript at end of body for optimized loading-->
 <!--      <script type="text/javascript" src="/static/js/materialize.js"></script>-->
     </body>
-  </html>
-</body>
-
 </html>

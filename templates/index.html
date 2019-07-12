@@ -3,10 +3,8 @@
     <div class="col s6 offset-s4 center">
 
         <div class="col s6">
-            <form action="/" method="POST" style="margin-top: 70px">
+            <form class="center-align" action="/" method="POST" style="margin-top: 70px">
                 {{ form.csrf_token }}
-
-                    <form class="center-align">
                     <div class="row">
                         <div class="input-field col s4">
                             {{form.name}} {{form.name.label}}
@@ -50,7 +48,7 @@
                      'will be ready for download momentarily.', classes: 'white-text rounded'})">
 
             </form>
-                <div style="padding-bottom: 50px"></div>
+            <div style="padding-bottom: 50px"></div>
         </div>
     </div>
 {% endblock %}
