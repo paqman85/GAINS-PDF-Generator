@@ -7,8 +7,8 @@ from flask_mail import Mail, Message
 app = Flask(__name__)
 
 #easy change variable for the apps email
-appmail = "YourEmailHERE"
-apppass = "YourEmailPasswordHERE"
+appmail = "YourEMAILhere"
+apppass = "YourEMAILpasswordHERE"
 
 # Mail client settings -- enable emails of pdf
 app.config.update(
@@ -28,8 +28,15 @@ CLIENT_AUTH_TIMEOUT = 24 # in Hours
 app.config["SECRET_KEY"] = "BNI_For_life_fo_Shizzle"
 heroku = Heroku(app)
 
-MYDIR = os.path.dirname(__file__)
 
+#     print ('loading wkhtmltopdf path on heroku')
+MYDIR = os.path.dirname(__file__)
+WKHTMLTOPDF_CMD = os.path.join(MYDIR + "/vendor/wkhtmltox/lib/", "libwkhtmltox.so")
+
+# For production on heroku
+config = pdfkit.configuration(wkhtmltopdf=os.path.join(MYDIR + '/bin/',"wkhtmltopdf"))
+
+#pdfkit options
 pdfoption = options = {
     'page-size': 'A4',
     'margin-top': '0.75in',
@@ -37,12 +44,12 @@ pdfoption = options = {
     'margin-bottom': '0.75in',
     'margin-left': '0.75in',
 }
-
+# Load the form template as the home page
 @app.route('/')
 def index():
     return render_template('index.html')
 
-# simple webhook and pdf mailer
+# simple webhook and pdf mailer -- consumes webhook json data and useses it in the pdf generator, sends it to user email
 @app.route('/webhook2', methods=['POST'])
 def webhook2():
     if request.method == 'POST':
@@ -65,7 +72,7 @@ def webhook2():
         )
 
         css = ['.\materialize.css']
-        pdfkit.from_string(rendered,'GAINS.pdf',options=pdfoption css=css)
+        pdfkit.from_string(rendered,'GAINS.pdf',configuration=config, options=pdfoption css=css)
 
         msg = Message("Your GAINS Profile PDF",
             sender=appmail,
