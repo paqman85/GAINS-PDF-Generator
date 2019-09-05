@@ -1,54 +1,14 @@
-{% extends "base.html"%}
-{% block content %}
-    <div class="col s6 offset-s4 center">
-
-        <div class="col s6">
-            <form class="center-align" action="/" method="POST" style="margin-top: 70px">
-                {{ form.csrf_token }}
-                    <div class="row">
-                        <div class="input-field col s4">
-                            {{form.name}} {{form.name.label}}
-                        </div>
-                        <div class="input-field col s4">
-                        {{form.email}}{{form.email.label}}
-                        </div>
-                        <div class="input-field col s4">
-                        {{form.tel}}{{form.tel.label}}
-                        </div>
-                    </div>
-                    <div class="input-field col s12">
-                        {{form.about.label}}
-                        {{form.about}}
-                    </div>
-                    <div class="input-field col s12">
-                        {{form.goals.label}}
-                        {{form.goals}}
-                    </div>
-                    <div class="input-field col s12">
-                        {{form.accomplishments.label}}
-                        {{form.accomplishments}}
-                    </div>
-                    <div class="input-field col s12">
-                        {{form.interests.label}}
-                        {{form.interests}}
-                    </div>
-                    <div class="input-field col s12">
-                        {{form.networks.label}}
-                        {{form.networks}}
-                    </div>
-                    <div class="input-field col s12">
-                        {{form.skills.label}}
-                        {{form.skills}}
-                    </div>
-                    <div class="input-field col s12">
-                        {{form.referrals.label}}
-                        {{form.referrals}}
-                    </div>
-                    <input type="submit" value="Create!" onclick="M.toast({html: 'Your PDF is Generating and ' +
-                     'will be ready for download momentarily.', classes: 'white-text rounded'})">
-
-            </form>
-            <div style="padding-bottom: 50px"></div>
-        </div>
-    </div>
-{% endblock %}
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <title>BNI Gains</title>
+        <style type="text/css">
+            html{ margin: 0; height: 100%; overflow: hidden; }
+            iframe{ position: absolute; left:0; right:0; bottom:0; top:0; border:0; }
+        </style>
+    </head>
+    <body>
+    <iframe id="typeform-full" width="100%" height="100%" frameborder="0" src="https://atomic-inc.typeform.com/to/E7cPg6"></iframe>
+    <script type="text/javascript" src="https://embed.typeform.com/embed.js"></script>
+    </body>
+</html>

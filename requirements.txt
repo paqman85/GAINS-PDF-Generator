@@ -1,6 +1,8 @@
+blinker==1.4
 Click==7.0
 Flask==1.0.3
 flask-heroku==0.1.9
+Flask-Mail==0.9.1
 Flask-WTF==0.14.2
 gunicorn==19.9.0
 itsdangerous==1.1.0
@@ -12,7 +14,5 @@ pytz==2019.1
 reportlab==3.5.23
 sqlparse==0.3.0
 Werkzeug==0.15.4
-WTForms==2.2.1
 wkhtmltopdf-pack-ng==0.12.3.0
-
-
+WTForms==2.2.1
