@@ -72,7 +72,7 @@ def webhook2():
         )
 
         css = ['.\materialize.css']
-        pdfkit.from_string(rendered,'GAINS.pdf',configuration=config, options=pdfoption css=css)
+        pdfkit.from_string(rendered,'GAINS.pdf',configuration=config, options=pdfoption,css=css)
 
         msg = Message("Your GAINS Profile PDF",
             sender=appmail,
