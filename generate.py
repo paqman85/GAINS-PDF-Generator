@@ -71,7 +71,7 @@ def webhook2():
             pdf_referrals=content['form_response']['answers'][9]['text'],
         )
 
-        css = ['.\materialize.css']
+        css = ['materialize.css']
         pdfkit.from_string(rendered,'GAINS.pdf',configuration=config, options=pdfoption,css=css)
 
         msg = Message("Your GAINS Profile PDF",
